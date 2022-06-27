@@ -1,0 +1,1 @@
+export const url = 'https://duda-api.newhomesource.com/api/v2/Search/dudahomes?partnerid=8684&builderid=10430&pagesize=100&IncludeSchools=1&SortBy=Comm&IncludeSalesOffice=true&IncludePromos=1&IncludeEvents=1';
