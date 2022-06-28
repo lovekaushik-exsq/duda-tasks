@@ -24,6 +24,11 @@ header {
     text-align: justify;
 }
 
+.contact {
+    text-align: center;
+    font-size: xx-large;
+}
+
 .logo {
     line-height: 60px;
     position: fixed;
