@@ -1,4 +1,8 @@
 This is repository created for storing all tasks given.
+This has three branches till now.
+loveTasks: Things pushed by love
+lalitTasks: Things pushed by lalit
+shared: Here all shared work will be pushed by both of us. Some try or practice work.
 # Task 1
 Can you please perform following task using this API: https://duda-api.newhomesource.com/api/v2/Search/dudahomes?partnerid=8684&builderid=10430&[…]IncludeSalesOffice=true&IncludePromos=1&IncludeEvents=1
 Make an HTML page , display all homes with 5-10 properties from the API
