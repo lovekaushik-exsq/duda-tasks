@@ -1,91 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Responsive Sticky Navbar</title>
-    <link rel="stylesheet" href="style.css" />
-    <script defer src="./script.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <nav>
-          <div class="menu-icon">
-            <i class="fa fa-bars fa-2x"></i>
-          </div>
 
-          <div class="logo">H2M</div>
+<head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+      <title>Responsive Sticky Navbar</title>
+      <link rel="stylesheet" href="style.css" />
+      <script defer src="./script.js"></script>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+      <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+</head>
 
-          <div class="menu">
-            <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#content">Content</a></li>
-              <li><a href="#">Contact</a></li>
-              <li><a href="#">Login</a></li>
-            </ul>
-          </div>
-        </nav>
-      </header>
+<body>
       <div class="wrapper">
+            <header>
+                  <nav>
+                        <div class="menu-icon">
+                              <i class="fa fa-bars fa-2x"></i>
+                        </div>
 
-            <div class="contact">
-                  <p>
-                        Contact number : +12 9875678234
-                  </p>      
-                  <p>
-                        Email : contactUs@gmail.com
-                  </p>
+                        <div class="logo">H2M</div>
+
+                        <div class="menu">
+                              <ul>
+                                    <li><a href="#">Home</a></li>
+                                    <li><a href="#content">Content</a></li>
+                                    <li><a href="#contact">Contact</a></li>
+                                    <li><a href="#login">Login</a></li>
+                              </ul>
+                        </div>
+                  </nav>
+            </header>
+            <div class="wrapper">
+                  <div id="content">
+                        <p>
+                              Space is the boundless three-dimensional extent in which objects and
+                              events have relative position and direction.[1] Physical space is
+                              often conceived in three linear dimensions, although modern physicists
+                              usually consider it, with time, to be part of a boundless
+                              four-dimensional continuum known as spacetime. The concept of space is
+                              considered to be of fundamental importance to an understanding of the
+                              physical universe. However, disagreement continues between
+                              philosophers over whether it is itself an entity, a relationship
+                              between entities, or part of a conceptual framework.
+                        </p>
+                        <p>
+                              Debates concerning the nature, essence and the mode of existence of
+                              space date back to antiquity; namely, to treatises like the Timaeus of
+                              Plato, or Socrates in his reflections on what the Greeks called khôra
+                              (i.e. "space"), or in the Physics of Aristotle (Book IV, Delta) in the
+                              definition of topos (i.e. place), or in the later "geometrical
+                              conception of place" as
+                        </p>
+                        <p>
+                              Space is the boundless three-dimensional extent in which objects and
+                              events have relative position and direction.[1] Physical space is
+                              often conceived in three linear dimensions, although modern physicists
+                              usually consider it, with time, to be part of a boundless
+                              four-dimensional continuum known as spacetime. The concept of space is
+                              considered to be of fundamental importance to an understanding of the
+                              physical universe. However, disagreement continues between
+                              philosophers over whether it is itself an entity, a relationship
+                              between entities, or part of a conceptual framework.
+                        </p>
+                        <p>
+                              Debates concerning the nature, essence and the mode of existence of
+                              space date back to antiquity; namely, to treatises like the Timaeus of
+                              Plato, or Socrates in his reflections on what the Greeks called khôra
+                              (i.e. "space"), or in the Physics of Aristotle (Book IV, Delta) in the
+                              definition of topos (i.e. place), or in the later "geometrical
+                              conception of place" as
+                        </p>
+                  </div>
+                  <div id="contact">
+                        <p>
+                              Contact number : +12 9875678234
+                        </p>
+                        <p>
+                              Email : contactUs@gmail.com
+                        </p>
+                  </div>
+                  <div id="login">
+                        <form action="action_page.php" method="post">
+                              <div class="imgcontainer">
+                                    <img src="img_avatar2.png" alt="Avatar" class="avatar">
+                                  </div>
+                              <div class="container">
+                                    <label for="uname"><b>Username</b></label>
+                                    <input type="text" placeholder="Enter Username" name="uname" required>
+                                    <label for="uname"><b>first name</b></label>
+                                    <input type="text" placeholder="Enter first name" name="fname" required>
+                                    <label for="uname"><b>last name</b></label>
+                                    <input type="text" placeholder="Enter Last name" name="lname" required>
+
+                                    <label for="psw"><b>Password</b></label>
+                                    <input type="password" placeholder="Enter Password" name="psw" required>
+
+                                    <button type="submit">Login</button>
+                                    <label>
+                                          <input type="checkbox" checked="checked" name="remember"> Remember me
+                                    </label>
+                              </div>
+
+                              <div class="container" style="background-color:#f1f1f1">
+                                    <button type="button" class="cancelbtn">Cancel</button>
+                                    <span class="psw">Forgot <a href="#">password?</a></span>
+                              </div>
+                        </form>
+                  </div>
             </div>
-            
-            
-            
-            <div id="content">
-                  <p>
-                        Space is the boundless three-dimensional extent in which objects and
-                        events have relative position and direction.[1] Physical space is
-                        often conceived in three linear dimensions, although modern physicists
-                        usually consider it, with time, to be part of a boundless
-                        four-dimensional continuum known as spacetime. The concept of space is
-                        considered to be of fundamental importance to an understanding of the
-                        physical universe. However, disagreement continues between
-                        philosophers over whether it is itself an entity, a relationship
-                        between entities, or part of a conceptual framework.
-                  </p>
-                  <p>
-                        Debates concerning the nature, essence and the mode of existence of
-                        space date back to antiquity; namely, to treatises like the Timaeus of
-                        Plato, or Socrates in his reflections on what the Greeks called khôra
-          (i.e. "space"), or in the Physics of Aristotle (Book IV, Delta) in the
-          definition of topos (i.e. place), or in the later "geometrical
-          conception of place" as
-      </p>
-      <p>
-            Space is the boundless three-dimensional extent in which objects and
-            events have relative position and direction.[1] Physical space is
-            often conceived in three linear dimensions, although modern physicists
-            usually consider it, with time, to be part of a boundless
-            four-dimensional continuum known as spacetime. The concept of space is
-            considered to be of fundamental importance to an understanding of the
-            physical universe. However, disagreement continues between
-            philosophers over whether it is itself an entity, a relationship
-            between entities, or part of a conceptual framework.
-      </p>
-      <p>
-            Debates concerning the nature, essence and the mode of existence of
-            space date back to antiquity; namely, to treatises like the Timaeus of
-            Plato, or Socrates in his reflections on what the Greeks called khôra
-            (i.e. "space"), or in the Physics of Aristotle (Book IV, Delta) in the
-            definition of topos (i.e. place), or in the later "geometrical
-            conception of place" as
-      </p>
-</div>
-</div>
 </body>
+
 </html>

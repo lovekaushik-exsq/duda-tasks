@@ -10,9 +10,9 @@ $(document).ready(function () {
 
 $(window).on("scroll", function() {
     if($(window).scrollTop()) {
-          $('nav').addClass('black');
+        $('nav').addClass('black');
     }
     else {
-          $('nav').removeClass('black');
+        $('nav').removeClass('black');
     }
 })
