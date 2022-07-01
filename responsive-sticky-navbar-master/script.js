@@ -1,25 +1,66 @@
-const sectionIds = [];
-const gap = document.getElementById("nav").offsetHeight;
+//If refreshed it will bring site to top
+history.scrollRestoration = "manual";
+//Nav height calculate
+const gap = document.querySelector("#nav").offsetHeight;
 
+//function to find section ids
+const sectionIds = [];
 const sections = document.querySelectorAll("section");
 sections.forEach((section) => {
   sectionIds.push(section.id);
 });
 
-let idsToGap = [];
+//function to find section gap from nav
+function getSectionGapFromTop() {
+  let idsToGap = [];
+  sectionIds.forEach((id) => {
+    const gapFromSection = document.getElementById(id).offsetTop - gap;
+    idsToGap.push(gapFromSection);
+  });
 
+  return idsToGap;
+}
+
+//on ready of document
+document.addEventListener("DOMContentLoaded", function () {
+  handleClickScroll();
+  handleScrolling();
+  handleLinkWithIdsScroll();
+});
+//on change of id in link
+window.addEventListener("hashchange", () => {
+  handleLinkWithIdsScroll();
+});
+
+//Clicking tabs
 handleClickScroll();
-history.scrollRestoration = "manual";
+function handleClickScroll() {
+  const idsToGap = getSectionGapFromTop();
+  let nav = document.querySelector("#nav");
+  let elements = nav.querySelectorAll("button");
+  elements.forEach((element, index) => {
+    element.addEventListener("click", () => {
+      window.scrollTo(0, idsToGap[index]);
+    });
+  });
+}
 
-$(document).ready(function () {
-  $(window).scroll(function () {
+//Handle link with ids
+function handleLinkWithIdsScroll() {
+  if (document.URL.indexOf("#") > 0) {
+    var link = document.URL.split("#");
+    let id = "#" + link[1];
+    let y = document.querySelector(id).offsetTop - gap;
+    window.scrollTo(0, y);
+  }
+}
+
+//Scrolling
+function handleScrolling() {
+  window.addEventListener("scroll", function () {
     let nav = document.querySelector("#nav");
     let elements = nav.querySelectorAll("button");
-    idsToGap = [];
-    sectionIds.forEach((id) => {
-      const gapFromSection = document.getElementById(id).offsetTop - gap;
-      idsToGap.push(gapFromSection);
-    });
+    const idsToGap = getSectionGapFromTop();
     if (window.pageYOffset < idsToGap[0]) {
       elements.forEach((element) => {
         element.classList.remove("active");
@@ -28,8 +69,9 @@ $(document).ready(function () {
       makeTabActive(window.pageYOffset, idsToGap, elements);
     }
   });
-});
+}
 
+//Add class active
 function makeTabActive(currentPoint, gapArr, elements) {
   gapArr.forEach((value, key) => {
     const variableChange = getBuffer(
@@ -39,6 +81,15 @@ function makeTabActive(currentPoint, gapArr, elements) {
     if (variableChange > value) {
       elements[key].classList.add("active");
       removeRest(value, gapArr, elements);
+    }
+  });
+}
+
+//Remove class active
+function removeRest(value, arr, elements) {
+  arr.forEach((ele, i) => {
+    if (value != ele) {
+      elements[i].classList.remove("active");
     }
   });
 }
@@ -53,27 +104,4 @@ function getBuffer(currentPoint, value) {
     ans = currentPoint + value / 10;
   }
   return ans;
-}
-
-function removeRest(value, arr, elements) {
-  arr.forEach((ele, i) => {
-    if (value != ele) {
-      elements[i].classList.remove("active");
-    }
-  });
-}
-
-function handleClickScroll() {
-  idsToGap = [];
-  sectionIds.forEach((id) => {
-    const gapFromSection = document.getElementById(id).offsetTop - gap;
-    idsToGap.push(gapFromSection);
-  });
-  let nav = document.querySelector("#nav");
-  let elements = nav.querySelectorAll("button");
-  elements.forEach((element, index) => {
-    element.addEventListener("click", () => {
-      window.scrollTo(0, idsToGap[index]);
-    });
-  });
 }
