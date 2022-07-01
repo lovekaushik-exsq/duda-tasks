@@ -1,4 +1,10 @@
+//If refreshed it will bring site to top
+history.scrollRestoration = "manual";
+
+let idsToGap = [];
 const sectionIds = [];
+
+//Nav height calculate
 const gap = document.getElementById("nav").offsetHeight;
 
 const sections = document.querySelectorAll("section");
@@ -6,11 +12,42 @@ sections.forEach((section) => {
   sectionIds.push(section.id);
 });
 
-let idsToGap = [];
-
+//Clicking tabs
 handleClickScroll();
-history.scrollRestoration = "manual";
+function handleClickScroll() {
+  idsToGap = [];
+  sectionIds.forEach((id) => {
+    const gapFromSection = document.getElementById(id).offsetTop - gap;
+    idsToGap.push(gapFromSection);
+  });
+  let nav = document.querySelector("#nav");
+  let elements = nav.querySelectorAll("button");
+  elements.forEach((element, index) => {
+    element.addEventListener("click", () => {
+      window.scrollTo(0, idsToGap[index]);
+    });
+  });
+}
 
+//Coming on link with #
+$(document).ready(function () {
+  if (document.URL.indexOf("#") > 0) {
+    var link = document.URL.split("#");
+    scrollId("#" + link[1]);
+  }
+});
+$(window).on("hashchange", function (e) {
+  if (document.URL.indexOf("#") > 0) {
+    var link = document.URL.split("#");
+    scrollId("#" + link[1]);
+  }
+});
+
+function scrollId(id) {
+  window.scrollTo(0, $(id).offset().top - gap + 1);
+}
+
+//Scrolling
 $(document).ready(function () {
   $(window).scroll(function () {
     let nav = document.querySelector("#nav");
@@ -60,20 +97,5 @@ function removeRest(value, arr, elements) {
     if (value != ele) {
       elements[i].classList.remove("active");
     }
-  });
-}
-
-function handleClickScroll() {
-  idsToGap = [];
-  sectionIds.forEach((id) => {
-    const gapFromSection = document.getElementById(id).offsetTop - gap;
-    idsToGap.push(gapFromSection);
-  });
-  let nav = document.querySelector("#nav");
-  let elements = nav.querySelectorAll("button");
-  elements.forEach((element, index) => {
-    element.addEventListener("click", () => {
-      window.scrollTo(0, idsToGap[index]);
-    });
   });
 }
